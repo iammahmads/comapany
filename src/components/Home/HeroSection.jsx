@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FaLongArrowAltRight, FaQuoteRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
+import CustomButton from "../CustomButton";
+import CustomLink from "../CustomLink";
 
 const HeroSection = () => {
   const [windowWidth, setWindowWidth] = useState(
@@ -18,53 +20,38 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative pt-36 pb-36 px-0 bg-cover bg-home-hero-section">
-      <div className="sized   absolute w-full h-full  left-0 z-0    box-border">
-        <iframe
-          title="Corte De Oro Barber"
-          allowFullScreen={true}
-          allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          src="https://www.youtube.com/embed/Mj7KARIRji4?controls=0&rel=0&playsinline=1&autoplay=1&mute=1&loop=1&playlist=Mj7KARIRji4&start=21&modestbranding=1&showinfo=0&iv_load_policy=3"
-          className="w-full h-full  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{
-            minWidth: "100%",
-            height: "120%",
-            maxWidth: "100%",
-            aspectRatio: "16/9",
-          }}
-          playsinline="true"
-        ></iframe>
-      </div>
-
-      <div className="bg-fixed bg-center bg-no-repeat bg-cover bg-home-hero-section bg-black opacity-0 md:opacity-0 w-full h-full absolute top-0 left-0"></div>
-
+    <section className="relative py-24 px-0 bg-fill bg-no-repeat md:bg-cover bg-home-hero-section">
       <div className="relative z-20 text-white lg:w-4/5 m-auto max-w-contentWidth flex mx-auto px-6">
-        <div className="md:w-1/2 relative flex flex-wrap flex-col">
-          <div className="md:w-2/12 pb-4 border-t-2 border-white"></div>
-          <h1 className="text-h1 max-sm:text-40 font-black  pb-12 mb-5">
-            Corte de Oro <br /> Barber Studio
-          </h1>
+        <div className="md:w-2/3 relative flex flex-wrap flex-col">
+          <div className="text-6xl max-sm:text-40 font-black">
+            <span>ZERO</span>
+            <span className="text-yellow-500 inline">BUG</span>
+            <div className="w-[60%] md:w-[35%] lg:w-[45%] pb-4 border-t-2 border-white mt-4 mb-20"></div>
+          </div>
 
-          <div className="w-full pb-4 border-t-2 border-white mb-5"></div>
-
-          <div className="flex gap-6">
+          <div className="w-full flex gap-6">
             <div>
-              <div className="text-white font-bold text-3xl p-2.5 border border-white flex w-max">
+              <div className="text-yellow-500 font-bold text-3xl p-2.5 border border-white flex w-max">
                 <FaQuoteRight />
               </div>
             </div>
 
-            <h3 className="text-h3 max-sm:text-xl font-bold uppercase">
-              "here Every cut Tells a Story & we're Setting Trends, One Head at
-              a Time"
+            <h3 className="md:text-2xl text-xl font-bold capitalize">
+              Turning Ideas into Bug-Free Realities. <br />
+              Web Development Without Compromise.
             </h3>
           </div>
 
           <div className="mt-11 w-max">
-            <Link to="/barbers" className="">
-              <span className="flex gap-5 items-center justify-center sm:px-6 sm:py-4 px-4 py-3 border-3 border-white uppercase">
-                <FaLongArrowAltRight />
-                Book an Appointment
+            <Link
+              to={
+                "https://api.whatsapp.com/send/?phone=%2B923057677534&text=Hi%21+I+need+your+assistance."
+              }
+              target="_blank"
+            >
+              <span className="hover:scale-105 transition-all ease-linear flex w-fit my-1 bg-black text-white font-bold gap-5 items-center justify-center sm:px-6 sm:py-2 px-4 py-1 border-3 border-yellow-500 font-semibold">
+                <FaLongArrowAltRight className="text-yellow-500" />
+                Contact us
               </span>
             </Link>
           </div>

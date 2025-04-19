@@ -26,10 +26,11 @@ export default {
       backgroundImage: {
         "custom-gradient": "linear-gradient(180deg, #5f5e5e 0%, #110105 100%)",
         "home-about-section": "url('/src/assets/images/home-about-img.jpg')",
-        "home-hero-section": "url('/src/assets/images/home-hero-bg-img.png')",
+        "home-hero-section": "url('/images/hero.png')",
         "home-hero-overlay-img": "url('/src/assets/images/bg-overlay-img.jpg')",
         "home-carousel-bg": "url('/src/assets/images/home-carousel-bg.jpeg')",
         "carousel-bg-img": "url('/src/assets/images/carousel-bg-img.jpeg')",
+        "footer-bg-img": "url('/src/assets/images/bg-footer.jpg')",
       },
       maxWidth: {
         contentWidth: "1140px",

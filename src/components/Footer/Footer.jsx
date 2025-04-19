@@ -1,9 +1,11 @@
 import React from "react";
-import { openingHours } from "./Data";
 import {
   RiFacebookFill,
+  RiGithubFill,
   RiGoogleFill,
   RiInstagramFill,
+  RiLinkedinFill,
+  RiWhatsappFill,
   RiYoutubeFill,
 } from "react-icons/ri";
 import { useBusinessContext } from "../../context/BusinessContext";
@@ -24,80 +26,69 @@ const Footer = () => {
     zip,
   } = businessData || {};
 
-  const contact = [
-    {
-      title: "Address:",
-      timing: `${address}, ${city}, ${state}, ${zip}`,
-    },
-    {
-      title: "Phone:",
-      timing: phone_number ? formatPhoneNumber(phone_number) : "",
-    },
-    {
-      title: "Email:",
-      timing: email,
-    },
-  ];
+  const contact = {
+    address: "Chenab Chowk, Faisalbad, Pakistan",
+    Phone: "+92-305-7677534",
+    Email: "s.m.sabbor09@gmail.com",
+  };
+
   return (
     <>
-      <footer className='bac relative w-full   sm:bg-[url("src/assets/images/bg-footer.jpg")] text-white'>
-        <div className="absolute bg-overlay  top-0 bottom-0 right-0  left-0"></div>
-        <div className="relative z-20 max-w-contentWidth lg:w-10/12 m-auto w-full  p-2 sm:p-4 py-9">
+      <footer className="bac relative w-full text-white bg-black">
+        <div className="relative  max-w-contentWidth lg:w-10/12 m-auto w-full  p-2 sm:p-4 py-9">
           <div className="flex sm:flex-row flex-col w-full justify-center gap-10 md:gap-1 text-center  sm:text-left   sm:justify-between">
             <div className="flex flex-col gap-3 ">
-              <h3 className="font-bold text-2xl mb-2">Opening Hour</h3>
-              {openingHours.map((item, index) => (
-                <div
-                  className="flex lg:flex-row  sm:flex-col gap-1 text-sm sm:justify-start justify-center"
-                  key={index}
-                >
-                  <h5 className="font-bold ">{item.title}</h5>
-                  <span>{item.timing}</span>{" "}
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-col gap-3 sm:w-1/3 ">
               <h3 className="font-bold text-2xl mb-2">Contact</h3>
               <div className="flex flex-col gap-3 ">
-                {contact.map((item, index) => (
-                  <div
-                    className="flex lg:flex-row sm:w-full p-4 sm:p-0  sm:flex-col sm:justify-start justify-center gap-1 text-sm "
-                    key={index}
-                  >
-                    <h5 className="font-bold ">{item.title}</h5>
-                    <span>{item.timing}</span>{" "}
-                  </div>
-                ))}
+                <div className="flex lg:flex-row sm:w-full p-4 sm:p-0  sm:flex-col sm:justify-start justify-center gap-1 text-sm ">
+                  <address>{contact.address}</address>
+                </div>
+                <div className="flex lg:flex-row sm:w-full p-4 sm:p-0  sm:flex-col sm:justify-start justify-center gap-1 text-sm ">
+                  <a target="_blank" href={`tel:${contact.Phone}`}>
+                    {contact.Phone}
+                  </a>
+                </div>
+                <div className="flex lg:flex-row sm:w-full p-4 sm:p-0  sm:flex-col sm:justify-start justify-center gap-1 text-sm ">
+                  <a target="_blank" href={`mailto:${contact.Email}`}>
+                    {contact.Email}
+                  </a>
+                </div>
               </div>
             </div>
             <div className="flex flex-col gap-3">
               <h3 className="font-bold text-2xl mb-2">Keep in touch</h3>
-              <div className="flex gap-1 sm:justify-start justify-center">
-                <span className="p-2 text-black bg-white">
-                  <a href={instagram}>
-                    <RiInstagramFill />
+              <div className="flex gap-2 sm:justify-start justify-center text-3xl">
+                <span className="text-blue  bg-white rounded">
+                  <a href="#" target="_blank">
+                    <RiLinkedinFill/>
                   </a>
                 </span>
-                <span className="p-2 text-black bg-white">
-                  <a href={facebook} _blank>
-                    <RiFacebookFill></RiFacebookFill>{" "}
+                <span className="text-black bg-white rounded">
+                  <a href="" target="_blank">
+                    <RiGithubFill />
                   </a>
                 </span>
-                <span className="p-2 text-black bg-white">
-                  <a href={youtube}>
-                    <RiYoutubeFill />
+                <span className="text-green-500  bg-white rounded">
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=%2B923057677534&text=Hi%21+I+need+your+assistance."
+                    target="_blank"
+                  >
+                    <RiWhatsappFill />
                   </a>
                 </span>
               </div>
             </div>
           </div>
         </div>
+
+        <div className="w-full bg-black z-[100] text-center  sm:text-base text-xs text-white">
+          <p className="pb-2 ">
+            <span>Copyright &copy; {new Date().getFullYear()}</span>
+            <span className="text-yellow-500 und">&nbsp; Zero Bug &nbsp;</span>
+            <span>| All rights reserved.</span>
+          </p>
+        </div>
       </footer>
-      <div className="bg-black  text-center  sm:text-base text-xs text-white">
-        <p className=" ">
-          Copyright © 2024 Corte De Oro Barber Studio | All rights reserved.
-        </p>
-      </div>
     </>
   );
 };
