@@ -38,6 +38,16 @@ export default {
       fontFamily: {
         libre: ["Libre Baskerville", "serif"],
       },
+      keyframes: {
+        "slide-in-left": {
+          "0%": { transform: "translateX(-100%)", opacity: "0.3" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        
+      },
+      animation: {
+        "slide-in-left": "slide-in-left 1s ease forwards",
+      },
     },
   },
   plugins: [],

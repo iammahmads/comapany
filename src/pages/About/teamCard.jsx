@@ -12,29 +12,38 @@ const TeamCard = ({
   cardType = 0,
 }) => {
   return (
-    <div className="w-full sm:w-11/12 md:w-3/4 mx-auto bg-white rounded-2xl shadow-lg flex flex-col md:flex-row overflow-hidden">
+    <div className=" w-full sm:w-11/12 md:w-3/4 mx-auto flex flex-col md:flex-row overflow-hidden py-4 border-t-2 border-yellow-600 ">
       {cardType == 0 && (
-        <div className="md:w-1/2 w-full">
+        <div className="md:w-1/2 w-full h-min flex justify-center">
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-cover object-center"
+            className="w-[240px] h-[300px] object-cover object-center rounded-full border-2 border-yellow-500"
           />
         </div>
       )}
 
+      {cardType != 0 && (
+        <div className="md:w-1/2 w-full md:hidden flex justify-cente">
+          <img
+            src={image}
+            alt={name}
+            className="w-[240px] h-[300px] object-cover object-center rounded-full border border-yellow-500"
+          />
+        </div>
+      )}
       {/* Right - Content */}
       <div
-        className={`md:w-1/2 w-full p-6 flex flex-col justify-start bg-yellow-400`}
+        className={`md:w-1/2 w-full p-6 flex flex-col justify-start relative`}
       >
-        <h2 className="text-2xl font-bold text-black mb-2">{name}</h2>
-        <h4 className="text-blue-600 font-medium text-sm mb-4 uppercase tracking-wide">
+        <h2 className="text-2xl font-bold mb-2">{name}</h2>
+        <h4 className="font-medium text-sm mb-4 uppercase tracking-wide">
           {role}
         </h4>
-        <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+        <p className="text-yellow-500 text-sm mb-4 leading-relaxed">
           {description}
         </p>
-        <div className="flex flex-col mt-1">
+        <div className="flex flex-col mt-1 md:absolute md:bottom-[5%]">
           <h4>Socials</h4>
           <div className="flex gap-4 mt-1">
             {socials.map((social, index) => (
@@ -53,11 +62,11 @@ const TeamCard = ({
       </div>
 
       {cardType != 0 && (
-        <div className="md:w-1/2 w-full">
+        <div className="md:w-1/2 w-full hidden md:flex md:justify-cente">
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-cover object-center"
+            className="w-[240px] h-[300px] object-cover object-center rounded-full border-2 border-yellow-500"
           />
         </div>
       )}

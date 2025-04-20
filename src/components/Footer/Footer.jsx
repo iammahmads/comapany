@@ -16,7 +16,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bac relative w-full text-white bg-black">
+      <footer className="bac relative w-full text-white bg-black border-t border-yellow-400">
         <div className="relative  max-w-contentWidth lg:w-10/12 m-auto w-full  p-2 sm:p-4 py-9">
           <div className="flex sm:flex-row flex-col w-full justify-center gap-10 md:gap-1 text-center  sm:text-left   sm:justify-between">
             <div className="flex flex-col gap-3 ">

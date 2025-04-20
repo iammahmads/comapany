@@ -24,7 +24,7 @@ export const BusinessProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchData();
+    // fetchData();
   }, []);
 
   return (

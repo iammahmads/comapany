@@ -4,7 +4,7 @@ const teamMembers = [
   {
     name: "Sabbor Shah",
     role: "Founder",
-    image: "/images/sabbor.png",
+    image: "/images/sabbor.jpeg",
     description: "This is desc",
     socials: [
       {
