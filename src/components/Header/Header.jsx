@@ -1,13 +1,9 @@
 import { MdMenu } from "react-icons/md";
-import { useBusinessContext } from "../../context/BusinessContext";
 import { Link, useLocation } from "react-router-dom";
 import CancelIcon from "../../assets/icons/CancelIcon";
 import { useState } from "react";
 
 const Header = () => {
-  const { businessData } = useBusinessContext();
-
-  const { instagram } = businessData || {};
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -17,14 +13,6 @@ const Header = () => {
     {
       elementName: "HOME",
       path: "/",
-    },
-    {
-      elementName: "BOOK",
-      path: "/barbers",
-    },
-    {
-      elementName: "PORTFOLIO",
-      path: instagram,
     },
     {
       elementName: "ABOUT",

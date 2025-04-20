@@ -14,7 +14,7 @@ const TeamCard = ({
   return (
     <div className=" w-full sm:w-11/12 md:w-3/4 mx-auto flex flex-col md:flex-row overflow-hidden py-4 border-t-2 border-yellow-600 ">
       {cardType == 0 && (
-        <div className="md:w-1/2 w-full h-min flex justify-center">
+        <div className="md:w-1/3 w-full h-min flex justify-center">
           <img
             src={image}
             alt={name}
@@ -24,7 +24,7 @@ const TeamCard = ({
       )}
 
       {cardType != 0 && (
-        <div className="md:w-1/2 w-full md:hidden flex justify-cente">
+        <div className="md:w-1/3 w-full md:hidden flex justify-cente">
           <img
             src={image}
             alt={name}
@@ -34,7 +34,7 @@ const TeamCard = ({
       )}
       {/* Right - Content */}
       <div
-        className={`md:w-1/2 w-full p-6 flex flex-col justify-start relative`}
+        className={`md:w-2/3 w-full p-6 flex flex-col justify-start relative`}
       >
         <h2 className="text-2xl font-bold mb-2">{name}</h2>
         <h4 className="font-medium text-sm mb-4 uppercase tracking-wide">
@@ -43,7 +43,7 @@ const TeamCard = ({
         <p className="text-yellow-500 text-sm mb-4 leading-relaxed">
           {description}
         </p>
-        <div className="flex flex-col mt-1 md:absolute md:bottom-[5%]">
+        <div className="flex flex-col mt-1 ">
           <h4>Socials</h4>
           <div className="flex gap-4 mt-1">
             {socials.map((social, index) => (
@@ -62,7 +62,7 @@ const TeamCard = ({
       </div>
 
       {cardType != 0 && (
-        <div className="md:w-1/2 w-full hidden md:flex md:justify-cente">
+        <div className="md:w-1/3 w-full hidden md:flex md:justify-cente">
           <img
             src={image}
             alt={name}

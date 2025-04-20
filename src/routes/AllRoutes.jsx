@@ -1,9 +1,9 @@
-import React from "react";
+
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
-import Barbers from "../pages/Barbers/Barbers";
+import NotFound from "../pages/NotFound";
 
 const AllRoutes = () => {
   return (
@@ -13,15 +13,6 @@ const AllRoutes = () => {
         element={
           <>
             <Home />
-          </>
-        }
-      />
-
-      <Route
-        path="/barbers"
-        element={
-          <>
-            <Barbers />
           </>
         }
       />
@@ -39,6 +30,14 @@ const AllRoutes = () => {
         element={
           <>
             <Contact />
+          </>
+        }
+      />
+      <Route
+        path="*"
+        element={
+          <>
+            <NotFound />
           </>
         }
       />

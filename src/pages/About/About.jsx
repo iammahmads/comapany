@@ -59,7 +59,7 @@ const About = () => {
       </section>
 
       {/* Team Members */}
-      <section className="bg-black py-16 px-4 w-full text-yellow-400">
+      <section className="bg-black py-16 md:px-4 w-full text-yellow-400">
         <div className="max-w-6xl mx-auto flex flex-col items-center w-full">
           <h2 className="text-2xl sm:text-3xl font-bold mb-12 text-center">
             Our Core
