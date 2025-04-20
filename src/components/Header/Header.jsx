@@ -1,8 +1,8 @@
-import React, { useState } from "react";
 import { MdMenu } from "react-icons/md";
 import { useBusinessContext } from "../../context/BusinessContext";
 import { Link, useLocation } from "react-router-dom";
 import CancelIcon from "../../assets/icons/CancelIcon";
+import { useState } from "react";
 
 const Header = () => {
   const { businessData } = useBusinessContext();
@@ -41,7 +41,7 @@ const Header = () => {
   const { pathname } = location;
 
   return (
-    <header className={`w-full bg-black z-50 text-white relative px-4 md:px-0`}>
+    <header className={`w-full bg-black z-50 text-white relative px-4 md:px-0 md:border-b-2 md:border-yellow-400`}>
       <div className="lg:w-4/5 m-auto max-w-contentWidth ">
         <div className="flex justify-between items-center px-4 py-1">
           <div className="w-fit z-50">

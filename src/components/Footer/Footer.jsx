@@ -1,33 +1,15 @@
-import React from "react";
+
 import {
-  RiFacebookFill,
   RiGithubFill,
-  RiGoogleFill,
-  RiInstagramFill,
   RiLinkedinFill,
   RiWhatsappFill,
-  RiYoutubeFill,
 } from "react-icons/ri";
-import { useBusinessContext } from "../../context/BusinessContext";
-import { formatPhoneNumber } from "../../handler/formatPhoneHandler";
+
 
 const Footer = () => {
-  const { businessData } = useBusinessContext();
-
-  const {
-    facebook,
-    instagram,
-    youtube,
-    phone_number,
-    email,
-    city,
-    address,
-    state,
-    zip,
-  } = businessData || {};
 
   const contact = {
-    address: "Chenab Chowk, Faisalbad, Pakistan",
+    address: "Chenab Chowk, Faisalabad, Pakistan",
     Phone: "+92-305-7677534",
     Email: "s.m.sabbor09@gmail.com",
   };

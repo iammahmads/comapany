@@ -1,4 +1,3 @@
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -49,10 +48,10 @@ const sliderSettings = {
 const TechnologySection = () => {
   return (
     <section className="relative pt-16 px-6 md:px-16 h-[70vh] sm:h-[65vh] overflow-y-hidden">
-      <div className="absolute bg-footer-bg-img bg-cover  top-0 bottom-0 right-0  left-0 -z-50"></div>
+      <div className="absolute bg-fixed bg-custom-gradient bg-cover  top-0 bottom-0 right-0  left-0 -z-50"></div>
       <div className="absolute bg-overlay opacity-10  top-0 bottom-0 right-0 left-0"></div>
       <div className="max-w-7xl text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-yellow-500">
+        <h2 className="text-3xl md:text-4xl font-bold text-yellow-400">
           Technologies We Use
         </h2>
         <div>
