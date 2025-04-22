@@ -47,14 +47,14 @@ const sliderSettings = {
 
 const TechnologySection = () => {
   return (
-    <section className="relative pt-16 px-6 md:px-16 h-[75vh] sm:h-[65vh] md:h-[70vh] overflow-y-hidden">
+    <section className="relative pt-16 px-6 md:px-16">
       <div className="absolute bg-fixed bg-custom-gradient bg-cover  top-0 bottom-0 right-0  left-0 -z-50"></div>
       <div className="absolute bg-overlay opacity-10  top-0 bottom-0 right-0 left-0"></div>
       <div className="max-w-7xl text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-yellow-400">
           Technologies We Use
         </h2>
-        <div>
+        <div className="h-[30vh] sm:h-[40vh] md:h-[50vh] overflow-hidden">
           <Slider {...sliderSettings}>
             {technologies.map((tech, index) => (
               <div key={index} className="px-4 pt-8">
@@ -63,7 +63,7 @@ const TechnologySection = () => {
                     <img
                       src={tech.image}
                       alt={tech.name}
-                      className="w-24 h-24 object-contain mix-blend-multiply"
+                      className="w-20 h-20 md:h-24 md:w-24 object-contain mix-blend-multiply"
                     />
                   </div>
                   <p className="text-black font-medium text-lg pb-2">
