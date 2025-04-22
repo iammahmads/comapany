@@ -35,7 +35,7 @@ const Header = () => {
           <div className="w-fit z-50">
             <Link to="/">
               <img
-                className="md:w-32 md:h-24 w-24 h-16"
+                className="md:w-32 md:h-24 w-24 h-20"
                 src="/logo.png"
                 alt="Logo"
               />
