@@ -1,166 +1,143 @@
-import React, { useState } from "react";
-import { IoLocationSharp } from "react-icons/io5";
-import { FaPhone } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { useBusinessContext } from "../../context/BusinessContext";
-import { formatPhoneNumber } from "../../handler/formatPhoneHandler";
-import toast from "react-hot-toast";
-import useApi from "../../Api/Api";
+import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
-const inputDetails = [
-  {
-    labelName: "Name",
-    enter: "name",
-  },
-  {
-    labelName: "Email",
-    enter: "email",
-  },
-];
+const initialDetails = {
+  name: "",
+  email: "",
+  message: "",
+};
+const GoogleFormUrl =
+  "https://docs.google.com/forms/u/0/d/e/1FAIpQLScVuXi_Eik9Xi_cpQNshrSDqzluXEo2iejBvicuBBmwW4eifw/formResponse";
 
 const Contact = () => {
-  const { businessData } = useBusinessContext();
-  const Api = useApi();
+  const [formDetails, setFormDetails] = useState(initialDetails);
+  const [isFormSubmitting, setIsFormSubmitting] = useState(false);
 
-  const { phone_number, email, city, address, state, zip, account_id } =
-    businessData || {};
-
-  const initialDetails = {
-    name: "",
-    email: "",
-    message: "",
+  const handleChangeName = (e) => {
+    setFormDetails((prev) => ({ ...prev, name: e.target.value }));
   };
 
-  const [messagingDetails, setMessagingDetails] = useState(initialDetails);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setMessagingDetails((prev) => ({ ...prev, [name]: value }));
+  const handleChangeEmail = (e) => {
+    setFormDetails((prev) => ({ ...prev, email: e.target.value }));
   };
-  const handleSubmit = async (e) => {
+
+  const handleChangeMessage = (e) => {
+    setFormDetails((prev) => ({ ...prev, message: e.target.value }));
+  };
+
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // console.log(messagingDetails);
+    setIsFormSubmitting(true);
+
+    // making form data
+    const formData = new FormData();
+    formData.append("entry.1226206309", formDetails.name);
+    formData.append("entry.1802400272", formDetails.email);
+    formData.append("entry.195964685", formDetails.message);
 
     try {
-      let params = {
-        ...messagingDetails,
-      };
-      const response = await Api.post(
-        `booking?account_id=${account_id}`,
-        params
-      );
-
-      if (response) {
-        const { error } = response;
-
-        if (!error) {
-          console.log(messagingDetails);
-        }
+      const response = await fetch(GoogleFormUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData,
+      });
+      if (
+        response.status == 0 ||
+        (response.status >= 200 && response.status < 300)
+      ) {
+        setFormDetails(initialDetails);
+        toast.success("Submitted succesfully. We will contact you soon");
       }
-    } catch (error) {
-      toast.error("An error occurred while sending message.");
+    } catch (err) {
+      toast.error(err.message);
+    } finally {
+      setIsFormSubmitting(false);
     }
   };
 
   return (
     <>
-      <div className="set relative bg-[url('src/assets/images/bg-contact.jpg')] h-screen w-full object-cover bg-center bg-no-repeat bg-cover">
-        <div className="absolute bg-overlay top-0 bottom-0 right-0 left-0"></div>
-        <div className="sm:w-4/5 max-w-contentWidth relative sm:m-auto p-4 text-white">
-          <div className="flex flex-col mt-40 gap-4 justify-end md:pb-0 pb-8">
-            <div className="flex md:flex-row md:items-end gap-1 font-semibold flex-col">
-              <span className="w-20 h-px mb-1 bg-white"></span>
-              <span>Let's Get in Touch</span>
-            </div>
-            <div className="flex md:flex-col flex-row gap-2 font-extrabold text-5xl md:text-8xl">
-              <span>CONTACT</span>
-            </div>
-          </div>
+      {/* Banner */}
+      <section className="bg-black bg-opacity-95 text-white py-20 px-4 text-center">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-yellow-500">
+          Contact
+        </h1>
+        <p className="mt-4 text-base sm:text-lg md:text-xl">
+          Open to hear you.
+        </p>
+      </section>
+
+      <div className="flex justify-around md:gap-0 gap-8  md:flex-row flex-col">
+        <div className="hidden md:flex  items-center flex-col justify-center">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold">
+            Zero<span className="text-yellow-500">Bug</span>
+          </h1>
+          <img
+            src="/favicon.ico"
+            alt="zero bug"
+            className="w-[125px] h-[150px] mt-2 hover:scale-110 transition-all ease-linear"
+          />
         </div>
-      </div>
-      <div className="relative text-white bg-[url('src/assets/images/bg-image.jpg')]">
-        <div className="absolute bg-overlay top-0 bottom-0 right-0 left-0"></div>
-        <div className="py-20 max-w-contentWidth relative lg:w-4/5 p-4 flex flex-col gap-4  m-auto">
-          <div className="flex flex-col gap-10">
-            <div className="flex gap-1 flex-col font-semibold">
-              <span>/ 01</span>
-              <span className="w-20 h-px bg-blue-500"></span>
-            </div>
-            <div>
-              <span className="lg:text-6xl sm:text-5xl text-3xl font-bold">
-                Say Hello
-              </span>
-            </div>
-            <div className="flex flex-row items-end gap-1 sm:text-base text-sm font-semibold">
-              <span className="w-10 mb-1 h-px bg-white"></span>
-              <span>Send Us a message</span>
-            </div>
-          </div>
-          <div className="flex  justify-between md:gap-0 gap-8  md:flex-row flex-col">
-            <div className="flex flex-col  lg:w-1/3 md:w-2/5 w-4/5 lg:mt-8 mt-2 font-semibold gap-10">
-              <p className="leading-6">
-                Whether you’re ready to book your next haircut appointment or
-                just want to drop us a line to say what’s up.
-              </p>
-              <div className="flex gap-4   flex-col ">
-                <div className="flex flex-row  items-center gap-2 text-base ">
-                  <span className="font-bold text-red-500 ">
-                    <IoLocationSharp />
-                  </span>
-                  <span>{`${address}, ${city}, ${state}, ${zip}`}</span>{" "}
-                </div>
-                <div className="flex flex-row items-center  gap-2 text-sm ">
-                  <span className="font-bold  text-red-500">
-                    <FaPhone />
-                  </span>
-                  {phone_number ? formatPhoneNumber(phone_number) : ""}
-                  <span></span>{" "}
-                </div>
-                <div className="flex flex-row items-center  gap-2 text-sm ">
-                  <span className="font-bold  text-red-500">
-                    {" "}
-                    <MdEmail />
-                  </span>
-                  {email}
-                  <span></span>{" "}
-                </div>
-              </div>
+        <div className="flex justify-center">
+          <Toaster />
+          <form
+            action="#"
+            autoComplete="off"
+            className="flex flex-col gap-4 py-4 md:py-6 lg:py-8 text-black"
+            onSubmit={handleFormSubmit}
+          >
+            <div className="flex flex-col justify-center gap-1">
+              <label htmlFor="name_ContactForm">Name</label>
+              <input
+                type="text"
+                name="name_ContactForm"
+                value={formDetails.name}
+                onChange={handleChangeName}
+                autoComplete="off"
+                required
+                className="w-[75vw] border-2 border-black border-opacity-35 rounded-lg py-1 px-2 text-textHeading focus:border-opacity-100 focus:outline-none  sm:w-[70vw] md:w-[60vw] lg:w-[50vw]"
+                placeholder="Enter full name"
+              />
             </div>
 
-            <div className="md:w-1/2 ">
-              <form onSubmit={handleSubmit}>
-                {inputDetails.map((item, index) => (
-                  <div key={index} className="mb-4">
-                    <label className="block font-bold mb-1">{`Your ${item.labelName} (required)`}</label>
-                    <input
-                      required
-                      className="w-full  lg:w-10/12 text-black px-4 py-3"
-                      name={item.enter}
-                      type="text"
-                      value={messagingDetails[item.enter]}
-                      onChange={handleChange}
-                    />
-                  </div>
-                ))}
-                <div className="mb-4">
-                  <label className="block font-bold mb-1">Your Message:</label>
-                  <textarea
-                    required
-                    className="py-4 px-3 text-black w-full  lg:w-10/12"
-                    name="message"
-                    value={messagingDetails.message}
-                    onChange={handleChange}
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="bg-black text-sm border-white border-2 text-white p-3 "
-                >
-                  SEND
-                </button>
-              </form>
+            <div className="flex flex-col justify-center gap-1">
+              <label htmlFor="email_ContactForm">Email</label>
+              <input
+                type="email"
+                name="email_ContactForm"
+                value={formDetails.email}
+                onChange={handleChangeEmail}
+                autoComplete="off"
+                required
+                className="w-[75vw] border-2 border-black border-opacity-35 rounded-lg py-1 px-2 text-textHeading focus:border-opacity-100 focus:outline-none  sm:w-[70vw] md:w-[60vw] lg:w-[50vw]"
+                placeholder="Enter email"
+              />
             </div>
-          </div>
+
+            <div className="flex flex-col justify-center gap-1">
+              <label htmlFor="message_ContactForm">Message</label>
+              <textarea
+                name="message_ContactForm"
+                value={formDetails.message}
+                onChange={handleChangeMessage}
+                autoComplete="off"
+                required
+                className="w-[75vw] border-2 border-black border-opacity-35 rounded-lg py-1 px-2 text-textHeading focus:border-opacity-100 focus:outline-none  sm:w-[70vw] md:w-[60vw] lg:w-[50vw]"
+                placeholder="Enter message"
+              />
+            </div>
+
+            <div className="w-full flex flex-col items-center text-yellow-400">
+              <input
+                type="submit"
+                value={isFormSubmitting ? "Sending.." : "Send"}
+                disabled={isFormSubmitting}
+                className={`${
+                  isFormSubmitting ? "bg-gray-600" : "bg-black"
+                } px-2 py-0.5 rounded-md hover:scale-105 hover:shadow hover:shadow-yellow-500 transition-all ease-linear cursor-pointer`}
+              />
+            </div>
+          </form>
         </div>
       </div>
     </>

@@ -10,6 +10,7 @@ const AnimateOnView = ({ animation, children }) => {
         // Entry is fully visible
         if (entry.intersectionRatio === 1) {
           setShouldAnimate(true);
+          observer.unobserve(entry.target)
         } 
         // Entry completely out of view
         else if (entry.intersectionRatio === 0) {
@@ -26,7 +27,7 @@ const AnimateOnView = ({ animation, children }) => {
     return () => {
       if (ref.current) observer.unobserve(ref.current);
     };
-  }, []);
+  }, [shouldAnimate]);
 
   return (
     <div ref={ref} className={`${shouldAnimate ? animation : ""}`}>
