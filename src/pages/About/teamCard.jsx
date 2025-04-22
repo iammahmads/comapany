@@ -24,7 +24,7 @@ const TeamCard = ({
       )}
 
       {cardType != 0 && (
-        <div className="md:w-1/3 w-full md:hidden flex justify-cente">
+        <div className="md:w-1/3 w-full md:hidden flex justify-center">
           <img
             src={image}
             alt={name}
@@ -62,7 +62,7 @@ const TeamCard = ({
       </div>
 
       {cardType != 0 && (
-        <div className="md:w-1/3 w-full hidden md:flex md:justify-cente">
+        <div className="md:w-1/3 w-full hidden md:flex md:justify-center">
           <img
             src={image}
             alt={name}

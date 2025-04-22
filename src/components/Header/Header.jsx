@@ -48,7 +48,7 @@ const Header = () => {
           >
             {navData.map((item, index) => (
               <Link
-                onClick={toggleSidebar}
+                // onClick={toggleSidebar}
                 className={`md:px-3 cursor-pointer px-2 md:py-0 py-4 md:text-base text-xl md:border-none border-b-white border-b md:hover:text-yellow-500 hover:text-yellow-500 ${
                   (item.path === "/" && pathname === "/") ||
                   (item.path !== "/" && pathname.startsWith(item.path))
