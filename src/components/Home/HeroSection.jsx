@@ -20,7 +20,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative py-24 px-0 bg-fill bg-no-repeat md:bg-cover bg-home-hero-section">
+    <section className="relative py-24 px-0 bg-fill bg-no-repeat bg-cover bg-home-hero-section">
       <div className="relative z-20 text-white lg:w-4/5 m-auto max-w-contentWidth flex mx-auto px-6">
         <div className="md:w-2/3 relative flex flex-wrap flex-col">
           <div className="text-6xl max-sm:text-40 font-black">
