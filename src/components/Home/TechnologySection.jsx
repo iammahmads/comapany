@@ -54,16 +54,16 @@ const TechnologySection = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-yellow-400">
           Technologies We Use
         </h2>
-        <div className="h-[30vh] sm:h-[40vh] md:h-[50vh] overflow-hidden">
+        <div className="h-[35vh] sm:h-[40vh] md:h-[50vh] overflow-hidden flex items-center">
           <Slider {...sliderSettings}>
             {technologies.map((tech, index) => (
-              <div key={index} className="px-4 pt-8">
+              <div key={index} className="px-4 pt-8 ">
                 <div className="flex flex-col items-center space-y-4 pt-4 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
                   <div className=" flex items-center justify-center bg-white">
                     <img
                       src={tech.image}
                       alt={tech.name}
-                      className="w-20 h-20 md:h-24 md:w-24 object-contain mix-blend-multiply"
+                      className="max-w-20 max-w--20 md:max-h-24 md:max-w-24 object-contain mix-blend-multiply"
                     />
                   </div>
                   <p className="text-black font-medium text-lg pb-2">
