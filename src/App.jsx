@@ -3,7 +3,6 @@ import AllRoutes from "./routes/AllRoutes";
 import { useEffect } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import GlobalLoader from "./common/Loader/GlobalLoader";
 
 function App() {
   const { pathname } = useLocation();
@@ -14,7 +13,6 @@ function App() {
 
   return (
     <>
-    <GlobalLoader />
       <Header />
       <AllRoutes />
       <Footer />
