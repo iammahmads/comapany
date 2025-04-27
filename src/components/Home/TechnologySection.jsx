@@ -47,28 +47,28 @@ const sliderSettings = {
 
 const TechnologySection = () => {
   return (
-    <section className="relative pt-16 px-6 md:px-16 h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[55vh] overflow-hidden ">
-      <div className="absolute bg-fixed bg-custom-gradient bg-cover  top-0 bottom-0 right-0  left-0 -z-50"></div>
-      <div className="absolute bg-overlay opacity-10  top-0 bottom-0 right-0 left-0"></div>
-      <div className="max-w-7xl text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-yellow-400">
+    <section className="relative pt-16 px-6 md:px-16 h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[55vh] xl:[60vh] overflow-hidden">
+      <div className="absolute bg-fixed bg-custom-gradient bg-cover top-0 bottom-0 right-0 left-0 -z-50"></div>
+      <div className="absolute bg-overlay opacity-10 top-0 bottom-0 right-0 left-0"></div>
+
+      <div className="max-w-7xl mx-auto h-full flex flex-col items-center justify-center text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">
           Technologies We Use
         </h2>
-        <div className="">
+
+        <div className="w-full max-w-6xl h-full">
           <Slider {...sliderSettings}>
             {technologies.map((tech, index) => (
-              <div key={index} className="px-4 pt-8 ">
-                <div className="flex flex-col items-center space-y-4 pt-4 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
-                  <div className=" flex items-center justify-center bg-white">
+              <div key={index} className="px-4">
+                <div className="flex flex-col items-center space-y-2 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 p-4 h-full">
+                  <div className="flex items-center justify-center">
                     <img
                       src={tech.image}
                       alt={tech.name}
-                      className="w-20 h-20 md:max-h-24 md:max-w-24 object-contain mix-blend-multiply"
+                      className="w-20 h-20 md:w-24 md:h-24 object-contain mix-blend-multiply"
                     />
                   </div>
-                  <p className="text-black font-medium text-lg pb-2">
-                    {tech.name}
-                  </p>
+                  <p className="text-black font-medium text-lg">{tech.name}</p>
                 </div>
               </div>
             ))}

@@ -24,25 +24,25 @@ const CarouselSection = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full lg:w-1/2 h-full z-40 pointer-events-none">
           <div className="relative w-full h-full py-10 ">
             <div className="w-full h-full rounded-3xl border-2 border-white p-5 md:px-10 flex flex-col justify-between">
-              <div className="flex flex-row justify-between items-center">
-                <div className="w-20 text-3xl sm:text-20 w-max text-white font-semibold italic">
+              <div className="flex flex-row justify-end items-center">
+                {/* <div className="w-20 text-3xl sm:text-20 w-max text-white font-semibold italic">
                   Corte de Oro
-                </div>
+                </div> */}
 
                 <div>
                   <div className="flex gap-2 items-center justify-center font-libre">
                     <span className="text-4xl sm:text-40 w-max text-white font-semibold italic">
-                      {(barberIdx + 1).toString().padStart(3, "0")}
+                      {(barberIdx + 1).toString().padStart(2, "0")}
                     </span>
 
                     <span className="text-xl font-semibold text-ashGray">
-                      -{barbersData.length.toString().padStart(3, "0")}
+                      -{barbersData.length.toString().padStart(2, "0")}
                     </span>
                   </div>
 
-                  <p className="uppercase text-sm text-white font-semibold -mt-1.5">
+                  {/* <p className="uppercase text-sm text-white font-semibold -mt-1.5">
                     Tap artist to book
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
