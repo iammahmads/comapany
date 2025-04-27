@@ -1,11 +1,9 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import SliderComponent from "./SliderComponent";
 import { barbers } from "../../data/barbersData.js";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const CarouselSection = () => {
-  const [barbersData, setBarbersData] = useState(barbers);
-
   const [barberIdx, setBarberIdx] = useState(0);
 
   const sliderRef = useRef(null);
@@ -36,7 +34,7 @@ const CarouselSection = () => {
                     </span>
 
                     <span className="text-xl font-semibold text-ashGray">
-                      -{barbersData.length.toString().padStart(2, "0")}
+                      -{barbers.length.toString().padStart(2, "0")}
                     </span>
                   </div>
 
@@ -66,7 +64,9 @@ const CarouselSection = () => {
         </div>
 
         <div className="w-full h-full">
-          <SliderComponent {...{ barbersData, setBarberIdx, sliderRef }} />
+          {barbers && (
+            <SliderComponent {...{ barbers, setBarberIdx, sliderRef }} />
+          )}
         </div>
       </div>
     </div>

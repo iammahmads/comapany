@@ -1,11 +1,10 @@
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 
 export default function SliderComponent(props) {
-  const { barbersData, setBarberIdx, sliderRef } = props;
+  const { barbers, setBarberIdx, sliderRef } = props;
 
   const settings = {
     infinite: true,
@@ -18,7 +17,7 @@ export default function SliderComponent(props) {
   return (
     <div>
       <Slider {...settings} ref={sliderRef}>
-        {barbersData.map((data, idx) => {
+        {barbers.map((data, idx) => {
           const { imgSrc, name, website, bio } = data;
 
           return (

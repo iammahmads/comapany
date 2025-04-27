@@ -1,24 +1,7 @@
-import React, { useEffect, useState } from "react";
 import { FaLongArrowAltRight, FaQuoteRight } from "react-icons/fa";
-import { Link, redirect } from "react-router-dom";
-import CustomButton from "../CustomButton";
-import CustomLink from "../CustomLink";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
-  const [windowWidth, setWindowWidth] = useState(
-    window.document.documentElement.clientWidth
-  );
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.document.documentElement.clientWidth);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <section className="relative py-24 px-0 bg-fill bg-no-repeat bg-cover bg-home-hero-section">
       <div className="relative z-20 text-white lg:w-4/5 m-auto max-w-contentWidth flex mx-auto px-6">
