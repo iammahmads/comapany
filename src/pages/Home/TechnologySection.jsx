@@ -47,9 +47,9 @@ const sliderSettings = {
 
 const TechnologySection = () => {
   return (
-    <section className="relative pt-16 px-6 md:px-16 h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[55vh] xl:[60vh] overflow-hidden">
-      <div className="absolute bg-fixed bg-custom-gradient bg-cover top-0 bottom-0 right-0 left-0 -z-50"></div>
-      <div className="absolute bg-overlay opacity-10 top-0 bottom-0 right-0 left-0"></div>
+    <section className="relative pt-16 px-6 md:px-16 h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[55vh] xl:[60vh] overflow-hidden bg-black">
+      {/* <div className="absolute bg-fixed bg-custom-gradient bg-cover top-0 bottom-0 right-0 left-0 -z-50"></div>
+      <div className="absolute bg-black opacity-100 top-0 bottom-0 right-0 left-0"></div> */}
 
       <div className="max-w-7xl mx-auto h-full flex flex-col items-center justify-center text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">

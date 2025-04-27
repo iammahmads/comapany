@@ -1,9 +1,9 @@
-export const barbers = [
+export const projects = [
   {
-    name: "Rico",
-    imgSrc: "/barbers/rico-barber.png",
+    name: "How Square",
+    imgSrc: "/projects/howsquare.jpg",
     website:
-      "https://www.octavio.co/booking?account_id=d1305575-31ba-4f59-aa8d-b336bad8bc62",
+      "https://github.com/SyedMuhammadSabbor/Complete-Blogging-Site",
     bio: "Rico is a master of his craft, and his chair is where you want to be if you're looking for a cut that's a cut above the rest.",
   },
   {
