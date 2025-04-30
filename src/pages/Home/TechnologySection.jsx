@@ -27,7 +27,44 @@ const technologies = [
     name: "TypeScript",
     image: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
   },
+  {
+    name: "PostgreSQL",
+    image: "https://cdn.worldvectorlogo.com/logos/postgresql.svg",
+  },
+  // {
+  //   name: "SQL Server",
+  //   image: "https://upload.wikimedia.org/wikipedia/commons/8/87/SQL_Server_Logo.svg", // From Wikimedia
+  // },
+  {
+    name: "AWS",
+    image: "https://cdn.worldvectorlogo.com/logos/aws-2.svg",
+  },
+  {
+    name: "Digital Ocean",
+    image: "https://cdn.worldvectorlogo.com/logos/digitalocean.svg",
+  },
+  {
+    name: "Netlify",
+    image: "https://cdn.worldvectorlogo.com/logos/netlify.svg",
+  },
+  // {
+  //   name: "Render",
+  //   image: "http://www.w3.org/2000/svg", // Alternative render logo
+  // },
+  {
+    name: "Bootstrap",
+    image: "https://cdn.worldvectorlogo.com/logos/bootstrap-4.svg",
+  },
+  {
+    name: "HTML",
+    image: "https://cdn.worldvectorlogo.com/logos/html-1.svg",
+  },
+  {
+    name: "CSS",
+    image: "https://cdn.worldvectorlogo.com/logos/css-3.svg",
+  },
 ];
+
 
 const sliderSettings = {
   dots: false,
@@ -47,9 +84,9 @@ const sliderSettings = {
 
 const TechnologySection = () => {
   return (
-    <section className="relative pt-16 px-6 md:px-16 h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[55vh] xl:[60vh] overflow-hidden">
-      <div className="absolute bg-fixed bg-custom-gradient bg-cover top-0 bottom-0 right-0 left-0 -z-50"></div>
-      <div className="absolute bg-overlay opacity-10 top-0 bottom-0 right-0 left-0"></div>
+    <section className="relative pt-16 px-6 md:px-16 h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[55vh] xl:[60vh] overflow-hidden bg-black">
+      {/* <div className="absolute bg-fixed bg-custom-gradient bg-cover top-0 bottom-0 right-0 left-0 -z-50"></div>
+      <div className="absolute bg-black opacity-100 top-0 bottom-0 right-0 left-0"></div> */}
 
       <div className="max-w-7xl mx-auto h-full flex flex-col items-center justify-center text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">

@@ -41,12 +41,12 @@ const Footer = () => {
               <h3 className="font-bold text-2xl mb-2">Keep in touch</h3>
               <div className="flex gap-2 sm:justify-start justify-center text-3xl">
                 <span className="text-blue  bg-white rounded">
-                  <a href="#" target="_blank">
+                  <a href="https://www.linkedin.com/in/sabbor-shah-8019b9280/" target="_blank">
                     <RiLinkedinFill/>
                   </a>
                 </span>
                 <span className="text-black bg-white rounded">
-                  <a href="" target="_blank">
+                  <a href="https://github.com/SyedMuhammadSabbor" target="_blank">
                     <RiGithubFill />
                   </a>
                 </span>

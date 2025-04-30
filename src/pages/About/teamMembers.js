@@ -10,11 +10,11 @@ const teamMembers = [
     socials: [
       {
         icon: RiLinkedinFill,
-        url: "#",
+        url: "https://www.linkedin.com/in/sabbor-shah-8019b9280/",
       },
       {
         icon: RiGithubFill,
-        url: "#",
+        url: "https://github.com/SyedMuhammadSabbor",
       },
     ],
   },
@@ -27,11 +27,11 @@ const teamMembers = [
     socials: [
       {
         icon: RiLinkedinFill,
-        url: "#",
+        url: "https://www.linkedin.com/in/iammahmads",
       },
       {
         icon: RiGithubFill,
-        url: "#",
+        url: "https://github.com/iammahmads",
       },
     ],
   },
