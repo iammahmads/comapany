@@ -24,8 +24,11 @@ export default function SliderComponent(props) {
           return (
             <div
               key={imgSrc + idx}
-              className="w-full h-full px-4 sm:px-10 bg-carousel-bg-img bg-no-repeat bg-cover"
+              className="w-full h-full px-4 sm:px-10 bg-carousel-bg-img bg-no-repeat bg-cover relative"
             >
+              <div
+                className={`absolute top-0 h-full w-full bg-[url('${imgSrc}')] bg-cover`}
+              ></div>
               <div className="relative w-full lg:w-1/2 h-full m-auto pt-2">
                 <div className="mt-20">
                   <img
@@ -35,18 +38,18 @@ export default function SliderComponent(props) {
                   />
                 </div>
 
-                <div className="bottom-20 md:px-5 pt-2 flex justify-between flex-wrap gap-3 items-center w-full">
+                <div className="bottom-20 md:px-5 pt-2 flex justify-between flex-wrap gap-1 items-center w-full">
                   <div className="h-full flex flex-col flex-wrap items-stretch justify-center gap-x-2 xl:w-5/6 w-3/4 md:max-lg:w-5/6">
                     <span className="block text-3xl sm:text-40 font-bold uppercase text-white font-libre text-nowrap">
                       {name}
                     </span>
-                    <span className="block pt-1 text-slate-300 text-sm font-semibold">
+                    <span className="block pt-1 text-slate-300 text-sm font-semibold text-wrap">
                       {bio}
                     </span>
-                    <div className="w-min pt-2 md:mt-3 lg:mt-4">
+                    <div className="w-min pt-1 md:mt-1 lg:mt-2">
                       <Link
                         to={website}
-                        className="px-2 sm:px-6 py-1 gap-4 flex items-center  border-3 border-white  text-white transition-all ease-linear hover:scale-105"
+                        className="px-2 sm:px-6 py-0.5 gap-4 flex items-center  border-3 border-white  text-white transition-all ease-linear hover:scale-105"
                         target="_blank"
                       >
                         <span className=" uppercase">Demo</span>

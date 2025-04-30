@@ -17,7 +17,7 @@ const CarouselSection = () => {
   };
 
   return (
-    <div className="lg:px-0 px-4 bg-home-carousel-bg py-4">
+    <div className="lg:px-0 px-4 bg-home-carousel-bg  py-4">
       <h3 className="text-yellow-400 w-full text-center text-3xl md:text-4xl font-bold mb-4 pt-4">
         Our Work
       </h3>
@@ -27,7 +27,7 @@ const CarouselSection = () => {
             <div className="relative w-full h-full">
               <div className="w-full h-full px-5 py-3 md:px-10 flex flex-col justify-between">
                 <div className="flex flex-row justify-end items-center">
-                  <span className="text-4xl sm:text-40 w-max text-white font-semibold italic">
+                  <span className="text-4xl sm:text-40 w-max font-semibold italic text-yellow-400">
                     {(currentIdx + 1).toString().padStart(2, "0")}
                   </span>
 

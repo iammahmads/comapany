@@ -27,7 +27,44 @@ const technologies = [
     name: "TypeScript",
     image: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
   },
+  {
+    name: "PostgreSQL",
+    image: "https://cdn.worldvectorlogo.com/logos/postgresql.svg",
+  },
+  // {
+  //   name: "SQL Server",
+  //   image: "https://upload.wikimedia.org/wikipedia/commons/8/87/SQL_Server_Logo.svg", // From Wikimedia
+  // },
+  {
+    name: "AWS",
+    image: "https://cdn.worldvectorlogo.com/logos/aws-2.svg",
+  },
+  {
+    name: "Digital Ocean",
+    image: "https://cdn.worldvectorlogo.com/logos/digitalocean.svg",
+  },
+  {
+    name: "Netlify",
+    image: "https://cdn.worldvectorlogo.com/logos/netlify.svg",
+  },
+  // {
+  //   name: "Render",
+  //   image: "http://www.w3.org/2000/svg", // Alternative render logo
+  // },
+  {
+    name: "Bootstrap",
+    image: "https://cdn.worldvectorlogo.com/logos/bootstrap-4.svg",
+  },
+  {
+    name: "HTML",
+    image: "https://cdn.worldvectorlogo.com/logos/html-1.svg",
+  },
+  {
+    name: "CSS",
+    image: "https://cdn.worldvectorlogo.com/logos/css-3.svg",
+  },
 ];
+
 
 const sliderSettings = {
   dots: false,
